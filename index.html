@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sudoku — Game & Backtracking Solver</title>
+
+  <!-- Link to CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <section class="card">
+      <div class="title">
+        <div>
+          <h1>Sudoku — Game & Backtracking Solver</h1>
+          <div class="subtitle">Fill the grid and press <strong>Solve</strong> to run the backtracking algorithm.</div>
+        </div>
+        <div class="badge" id="status">Ready</div>
+      </div>
+
+      <!-- Board container (script.js will populate it) -->
+      <div id="board" class="board" aria-label="Sudoku board"></div>
+
+      <div class="legend">
+        <span><i class="dot dot-prefilled"></i> Prefilled</span>
+        <span><i class="dot dot-ok"></i> Valid</span>
+        <span><i class="dot dot-invalid"></i> Invalid</span>
+      </div>
+
+      <div class="footer">Tip: type digits 1–9. Use Validate before Solve to highlight conflicts.</div>
+    </section>
+
+    <aside class="panel">
+      <div class="card">
+        <div class="controls">
+          <button id="btn-generate">Generate</button>
+          <button id="btn-validate" class="secondary">Validate</button>
+          <button id="btn-solve">Solve</button>
+          <button id="btn-clear" class="danger">Clear</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <strong>About the Solver</strong>
+        <p class="subtitle">Classic backtracking (DFS). For each empty cell try digits 1–9 that are safe (not present in its row/column/3×3 box). If stuck, backtrack.</p>
+      </div>
+
+      <div class="card">
+        <strong>Sample Puzzles</strong>
+        <p class="subtitle">Generate cycles through a few preset puzzles (easy → hard).</p>
+        <div class="toast" id="toast"></div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Link to JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
